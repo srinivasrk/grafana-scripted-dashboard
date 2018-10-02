@@ -72,7 +72,7 @@ panels.renderer = "flot"
 panels.tooltip = {
   "shared" : true,
   "sort" : 0,
-  "value_type" : individual
+  "value_type" : "individual"
 }
 
 panels.type = "graph"
