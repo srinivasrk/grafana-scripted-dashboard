@@ -10,4 +10,4 @@ Once the file is in place run the URL below :
 
 And voila we get the output
 
-![screenshot] (./output.PNG)
+![screenshot](./output.PNG)
