@@ -33,10 +33,6 @@ if(!_.isUndefined(ARGS.measurement)) {
   measurement = ARGS.measurement
 }
 
-//create panels
-let customPanels = [] // for now we will only have one panel
-
-//create targets
 let customTargets = []
 for(var i = 0; i < fieldArray.length; i++) {
   let temp = {}
@@ -54,30 +50,27 @@ for(var i = 0; i < fieldArray.length; i++) {
   customTargets.push(temp)
 }
 
-  customPanels.targets = customTargets
-customPanels.gridPos = {
-  "h": 9,
-  "w": 12,
-  "x": 0,
-  "y": 0
+
+for (var i = 0; i < rows; i++) {
+  dashboard.rows.push({
+    title: 'Chart',
+    height: '300px',
+    panels: [
+      {
+        title: 'Events',
+        type: 'graph',
+        span: 12,
+        fill: 1,
+        linewidth: 2,
+        targets: customTargets,
+        tooltip: {
+          shared: true
+        }
+      }
+    ]
+  })
 }
 
-customPanels.fill = 1
-customPanels.lines = true
-customPanels.linewidth = 1
-customPanels.renderer = "flot"
-customPanels.tooltip = {
-  "shared" : true,
-  "sort" : 0,
-  "value_type" : "individual"
-}
-
-customPanels.type = "graph"
-
-
-dashboard.rows.push({
-  panels: customPanels
-})
 
 console.log(dashboard);
 
