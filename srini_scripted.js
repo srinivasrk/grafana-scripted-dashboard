@@ -78,7 +78,7 @@ customPanels.tooltip = {
 customPanels.type = "graph"
 
 
-dashboard.panels = customPanels
+dashboard.rows.panels = customPanels
 
 console.log(dashboard);
 
