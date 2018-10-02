@@ -26,7 +26,7 @@ var filedKeys = []
 dashboard.panels = [] // for msdgc, one panel
 dashboard.panels.targets = [] // will be multiple targets
 
-var filedArray = ['usage_idle'] // array with one element only by default
+var fieldArray = ['usage_idle'] // array with one element only by default
 if(!_.isUndefined(ARGS.field)) {
   fieldArray = ARGS.field.split(';') //creates a array of field values to be displayed
 }
