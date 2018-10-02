@@ -8,6 +8,8 @@ var dashboard
 
 var ARGS
 
+console.log(ARGS);
+
 dashboard = {
   rows: []
 };
@@ -37,6 +39,7 @@ let customTargets = []
 for(var i = 0; i < fieldArray.length; i++) {
   let temp = {}
   //create one target object for each field
+  temp.alias = measurement + "." + fieldArray[i]
   temp.measurement = measurement;
   temp.query = "SELECT mean("+ fieldArray[i] + ") FROM " + measurement + " WHERE $timeFilter GROUP BY time(5m) fill(null)"
   temp.groupBy = [{"params": ["5m"],"type": "time"},{"params": ["null"],"type": "fill"}]
