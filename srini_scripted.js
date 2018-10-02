@@ -23,9 +23,6 @@ var rows = 1
 // it is a array of fields that needs to be shown on the graph -> eg : if you want to see cpu_usage and cpu_idle on same plot
 var filedKeys = []
 
-dashboard.panels = [] // for msdgc, one panel
-
-
 var fieldArray = ['usage_idle'] // array with one element only by default
 if(!_.isUndefined(ARGS.field)) {
   fieldArray = ARGS.field.split(';') //creates a array of field values to be displayed
@@ -45,7 +42,7 @@ for(var i = 0; i < fieldArray.length; i++) {
   let temp = {}
   //create one target object for each field
   temp.measurement = measurement;
-  temp.query = "SELECT mean( "+ fieldArray[i] + ") FROM " + measurement + "WHERE $timeFilter GROUP BY time(5m) fill(null)"
+  temp.query = "SELECT mean("+ fieldArray[i] + ") FROM " + measurement + " WHERE $timeFilter GROUP BY time(5m) fill(null)"
   temp.groupBy = [{"params": ["5m"],"type": "time"},{"params": ["null"],"type": "fill"}]
   temp.select = [[{"params" : [fieldArray[i]], "type" : "field"}, {"params": [],"type": "mean"}]]
   temp.resultFormat = "time_series"
