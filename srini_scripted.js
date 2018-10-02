@@ -57,7 +57,7 @@ for(var i = 0; i < fieldArray.length; i++) {
   customTargets.push(temp)
 }
 
-customPanels.targets = customTargets
+  customPanels.targets = customTargets
 customPanels.gridPos = {
   "h": 9,
   "w": 12,
@@ -78,7 +78,9 @@ customPanels.tooltip = {
 customPanels.type = "graph"
 
 
-dashboard.rows.panels = customPanels
+dashboard.rows.push({
+  panels: customPanels
+})
 
 console.log(dashboard);
 
