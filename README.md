@@ -1,8 +1,8 @@
-#This project attempts to automate the dashboard creation in Grafana
+# This project attempts to automate the dashboard creation in Grafana
 
 Using the scripted dashboard concept of grafana : http://docs.grafana.org/reference/scripting/ we can build upon that concept to make more complex dashboards
 
-##Using this code
+## Using this code
 This javascript file (srini_scripted.js) has to be copied to /usr/share/grafana/public/dashboards/
 Once the file is in place run the URL below :
 
